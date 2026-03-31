@@ -1,0 +1,103 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+import Navbar from '../components/Navbar.astro'
+import HeroShowreel from '../components/HeroShowreel.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+
+const projects = [
+
+{
+image:"/assets/artwork1.jpg",
+title:"Procedural FX Tool",
+link:"/projects/procedural-fx",
+tags:["Unreal","Niagara","Procedural"]
+},
+
+{
+image:"/assets/artwork2.jpg",
+title:"Niagara VFX System",
+link:"/projects/procedural-fx",
+tags:["Niagara","Realtime FX"]
+},
+
+{
+image:"/assets/artwork3.jpg",
+title:"Shader Experiments",
+link:"/projects/procedural-fx",
+tags:["HLSL","Shader","Materials"]
+}
+
+]
+---
+
+<MainLayout title="Tech Art Portfolio">
+
+<Navbar />
+
+<main>
+
+<h1>Tech Art Showreel</h1>
+
+<HeroShowreel youtubeID="JdFvGFVXsZQ" />
+
+
+
+<section id="projects" class="projects grid">
+
+{projects.map(p => (
+<ProjectCard image={p.image} title={p.title} link={p.link} />
+))}
+
+</section>
+
+<section id="about" class="about">
+
+<h2>About</h2>
+
+<p>
+
+Technical Artist specializing in procedural systems,
+real-time VFX, and tool development.
+
+Experienced with Unreal Engine, Niagara, shader
+development and artist friendly pipelines.
+
+</p>
+
+</section>
+
+</main>
+
+</MainLayout>
+
+<style>
+
+.projects{
+  margin-left:10vw;
+  margin-right:10vw;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+}
+
+.about{
+  margin-top:4rem;
+  padding:2rem;
+  background:#111;
+  
+  
+}
+
+.about h2{
+  color:#0ff;
+  margin-bottom:1rem;
+}
+
+.about p{
+  line-height:1.6;
+}
+</style>
+

@@ -1,0 +1,41 @@
+---
+const { youtubeID } = Astro.props;
+---
+
+<section class="hero">
+
+<div class="video">
+
+<iframe
+src={`https://www.youtube.com/embed/${youtubeID}?autoplay=1&mute=1&loop=1&playlist=${youtubeID}`}
+allow="autoplay; encrypted-media"
+allowfullscreen
+></iframe>
+
+</div>
+
+</section>
+
+<style>
+
+.hero{
+margin-left:10vw;
+margin-right:10vw;
+}
+
+.video{
+position:relative;
+padding-bottom:56.25%;
+height:0;
+border-radius:1px;
+
+}
+
+.video iframe{
+position:absolute;
+width:100%;
+height:100%;
+border:0;
+}
+
+</style>
