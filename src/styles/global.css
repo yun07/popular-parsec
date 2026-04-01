@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #111;
+  color: rgb(179, 179, 179);
+}
+
+section {
+  ;
+}
+
+h1, h2, h3 {
+  font-weight: 300;
+  color: rgb(179, 179, 179);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
