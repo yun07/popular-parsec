@@ -11,7 +11,7 @@ import About from '../components/About.astro'
 <Navbar />
 
 <main>
-<HeroShowreel youtubeID="rKjCsFPCCwk" />
+<HeroShowreel youtubeID="SXhIv3YKbps" />
 
 
 
@@ -31,24 +31,29 @@ import About from '../components/About.astro'
 
 <style>
 
-.projects{
-  margin-left:10vw;
-  margin-right:10vw;
-  max-width: 1800px;
-  gap: 0;
-  justify-content: center;  /* 整個 grid 居中 */
+.projects {
   margin-left: auto;
-  margin-right: auto;       /* 這兩行配合 justify-content: center 可以居中 */
+  margin-right: auto;
+  max-width: 1800px;
+  
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.grid{
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
+/* 控制最多三列 */
+@media (min-width: 960px) { /* 3 * 300px = 900px + gap */
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-
+/* 控制最少兩列 */
+@media (max-width: 640px) { /* 2 * 300px = 600px + gap */
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 
 </style>

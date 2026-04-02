@@ -50,13 +50,25 @@ export async function getStaticPaths() {
       ) : (
         <img src={project.image} alt={project.title} />
       )}
-    <div class="content">
+    <div class="content" id="content">
       
 
-      <p>{project.description}</p>
+      <p>{project.description.map(line => <p>{line}</p>)}</p>
     </div>
     <About />
 
   
   </body>
 </html>
+
+
+<style>
+
+.content {
+  max-width: 900px;
+  margin: 2rem auto;    
+}
+
+
+
+</style>
