@@ -50,10 +50,27 @@ export async function getStaticPaths() {
       ) : (
         <img src={project.image} alt={project.title} />
       )}
-    <div class="content" id="content">
-      
+    <div class="content">
 
-      <p>{project.description.map(line => <p>{line}</p>)}</p>
+    {project.description.map(line => {
+
+    if(
+    line === "Problem" ||
+    line === "Approach" ||
+    line === "Technical Highlights" ||
+    line === "Impact"
+    ){
+    return <h3>{line}</h3>
+    }
+
+    if(line.startsWith("-")){
+    return <li>{line.replace("- ","")}</li>
+    }
+
+    return <p>{line}</p>
+
+    })}
+
     </div>
     <About />
 
@@ -64,9 +81,28 @@ export async function getStaticPaths() {
 
 <style>
 
-.content {
-  max-width: 900px;
-  margin: 2rem auto;    
+.content h3{
+  font-size:1.4rem;
+  margin-top:2rem;
+  margin-bottom:0.5rem;
+  text-align:left;
+}
+
+.content p{
+  font-size:1rem;
+  line-height:1.6;
+  color:#ddd;
+  text-align:left;
+}
+
+.content li{
+  margin-left:20px;
+  margin-bottom:6px;
+  text-align:left;
+}
+
+.content ul{
+  padding-left:20px;
 }
 
 
