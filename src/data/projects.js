@@ -1,5 +1,33 @@
 export const projects = [
 {
+  title: "Synthetic Environment & Data Generation Pipeline",
+  slug: "synthetic-environment-data-pipeline",
+  image: "/assets/synthetic-environment.png",
+  video: "Q3zcQJY2bQc",
+
+  description: [
+
+    "Problem",
+    "Machine learning models require large and consistently labelled datasets, but collecting and manually annotating real-world data is expensive and difficult to scale. The goal was to create a controllable synthetic environment pipeline capable of generating varied intersection scenes and automatically producing training data.",
+
+    "Approach",
+    "Designed a procedural intersection generation pipeline using Houdini and Unreal Engine. Procedural parameters and random seeds control the generated environment, while Unreal Engine automates multi-pass rendering and dataset generation.",
+
+    "Technical Highlights",
+    "- Houdini HDA for procedural intersection and environment generation",
+    "- Houdini Engine integration for bringing generated environments into Unreal Engine",
+    "- Parameter and seed-driven scene variation for repeatable dataset generation",
+    "- Unreal Movie Render Queue pipeline producing RGB, semantic mask and depth outputs",
+    "- Automated batch generation across multiple procedural configurations",
+    "- COCO-format dataset generation from rendered synthetic scenes",
+    "- SegFormer training and evaluation to validate the generated semantic data",
+
+    "Impact",
+    "Created a controllable end-to-end synthetic data pipeline from procedural environment generation through rendering, dataset preparation and model evaluation. The pipeline demonstrates how procedural environments can be used to generate repeatable and scalable labelled data for machine learning workflows. A SegFormer baseline achieved 0.8745 mIoU on the generated validation set, providing a measurable check on dataset and label quality."
+  ]
+},
+
+{
 title: "Procedural Assembly Framework",
 slug: "procedural-assembly-framework",
 image: "/assets/Artboard1.png",
