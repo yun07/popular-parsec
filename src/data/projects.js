@@ -8,22 +8,16 @@ export const projects = [
   description: [
 
     "Problem",
-    "Machine learning models require large and consistently labelled datasets, but collecting and manually annotating real-world data is expensive and difficult to scale. The goal was to create a controllable synthetic environment pipeline capable of generating varied intersection scenes and automatically producing training data.",
+    "General-purpose world generators may struggle to provide precise control over specialised edge cases. Building dedicated generators can also require additional engineering work to connect them to downstream rendering, data export, and model evaluation workflows, increasing the cross-disciplinary skills required to deliver usable training data.",
 
     "Approach",
-    "Designed a procedural intersection generation pipeline using Houdini and Unreal Engine. Procedural parameters and random seeds control the generated environment, while Unreal Engine automates multi-pass rendering and dataset generation.",
+    "Designed an automated synthetic data pipeline that separates specialised environment generation from downstream data production. Developers can focus on creating Houdini operators for specific scenarios, while the shared pipeline handles rendering and dataset export through Houdini Engine and Unreal Engine. Built a procedural intersection generator as a demonstration of configurable, complex road-junction scenarios.",
 
     "Technical Highlights",
-    "- Houdini HDA for procedural intersection and environment generation",
-    "- Houdini Engine integration for bringing generated environments into Unreal Engine",
-    "- Parameter and seed-driven scene variation for repeatable dataset generation",
-    "- Unreal Movie Render Queue pipeline producing RGB, semantic mask and depth outputs",
-    "- Automated batch generation across multiple procedural configurations",
-    "- COCO-format dataset generation from rendered synthetic scenes",
-    "- SegFormer training and evaluation to validate the generated semantic data",
+    "Integrated Houdini Engine with Unreal Engine for automated rendering and runtime data export, avoiding an intermediate USD-file workflow. Implemented checkpoint-based recovery, lock-file coordination to prevent duplicate file writes across servers, and error handling for Houdini Engine failures during rendering.",
 
     "Impact",
-    "Created a controllable end-to-end synthetic data pipeline from procedural environment generation through rendering, dataset preparation and model evaluation. The pipeline demonstrates how procedural environments can be used to generate repeatable and scalable labelled data for machine learning workflows. A SegFormer baseline achieved 0.8745 mIoU on the generated validation set, providing a measurable check on dataset and label quality."
+    "Established a reusable workflow for connecting specialised scenario generators to automated data production. The approach aims to reduce duplicated pipeline development and reliance on individuals with expertise spanning procedural generation, Unreal Engine, Python automation, and downstream ML workflows. Demonstrated the pipeline with an eight-class semantic segmentation task, achieving a best evaluation mIoU of 0.8745."
   ]
 },
 
