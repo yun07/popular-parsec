@@ -17,7 +17,7 @@ export const projects = [
     "Integrated Houdini Engine with Unreal Engine for automated rendering and runtime data export, avoiding an intermediate USD-file workflow. Implemented checkpoint-based recovery, lock-file coordination to prevent duplicate file writes across servers, and error handling for Houdini Engine failures during rendering.",
 
     "Impact",
-    "Established a reusable workflow for connecting specialised scenario generators to automated data production. The approach aims to reduce duplicated pipeline development and reliance on individuals with expertise spanning procedural generation, Unreal Engine, Python automation, and downstream ML workflows. Demonstrated the pipeline with an eight-class semantic segmentation task, achieving a best evaluation mIoU of 0.8745."
+    "Established a reusable workflow for connecting specialised scenario generators to automated data production. The approach aims to reduce duplicated pipeline development and reliance on individuals with expertise spanning procedural generation, Unreal Engine, Python automation, and downstream ML workflows. Demonstrated the pipeline with 7-class semantic segmentation task, achieving a best evaluation mIoU of 0.8745."
   ]
 },
 
